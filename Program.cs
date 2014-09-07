@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Runtime.InteropServices;
 
 namespace SharpRift
 {
@@ -11,6 +12,8 @@ namespace SharpRift
         static void Main(string[] args)
         {
             VR.Initialize();
+
+            Console.WriteLine("Oculus SDK version: " + VR.GetVersionString());
 
             HMDisplay vrDevice;
 
@@ -23,6 +26,7 @@ namespace SharpRift
             {
                 // Create Fake VR Device
                 vrDevice = VR.CreateDebug(HMDisplayType.DK2);
+                Console.WriteLine("Last Error: " + VR.GetLastError());
             }
 
             // Start Sensor

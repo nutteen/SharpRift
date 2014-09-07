@@ -77,15 +77,32 @@ namespace SharpRift
         /// using any Oculus Rift functionality.
         /// </summary>
         /// <returns><c>true</c> if the initialize was successful; <c>false</c> otherwise.</returns>
-        [DllImport(lib, EntryPoint = "ovr_Initialize", CallingConvention = CallingConvention.Cdecl)]
+        [DllImport(lib, EntryPoint = "ovr_Initialize")]
         [return: MarshalAs(UnmanagedType.I1)]
         public static extern bool Initialize();
 
         /// <summary>
         /// Shuts down the Oculus Rift API.
         /// </summary>
-        [DllImport(lib, EntryPoint = "ovr_Shutdown", CallingConvention = CallingConvention.Cdecl)]
+        [DllImport(lib, EntryPoint = "ovr_Shutdown")]
         public static extern void Shutdown();
+
+        /// <summary>
+        /// Get version of Oculus SDK
+        /// </summary>
+        /// <returns></returns>
+        public static string GetVersionString()
+        {
+            return Marshal.PtrToStringAnsi(GetVersionStringInternal());
+        }
+
+        /// <summary>
+        /// Get version of Oculus SDK
+        /// </summary>
+        /// <returns></returns>
+        [DllImport(lib, CharSet = CharSet.Auto, EntryPoint = "ovr_GetVersionString")]
+        private static extern IntPtr GetVersionStringInternal();
+
         #endregion
 
         #region HMD Interface
@@ -157,7 +174,7 @@ namespace SharpRift
             return Marshal.PtrToStringAnsi(GetLastErrorInternal(HMDisplay.Zero));
         }
 
-        [DllImport(lib, EntryPoint = "ovrHmd_GetLastError", CallingConvention = CallingConvention.Winapi)]
+        [DllImport(lib, EntryPoint = "ovrHmd_GetLastError", CallingConvention = CallingConvention.Cdecl)]
         static extern IntPtr GetLastErrorInternal(this ovrHmd hmd);
 
         /// <summary>
