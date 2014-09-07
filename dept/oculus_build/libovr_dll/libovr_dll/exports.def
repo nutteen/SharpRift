@@ -1,0 +1,56 @@
+LIBRARY
+
+EXPORTS
+   ovr_Initialize
+   ovr_InitializeRenderingShim
+   ovr_Shutdown
+   ovr_GetVersionString
+   ovrHmd_Detect
+   ovrHmd_Create
+   ovrHmd_Destroy
+   ovrHmd_CreateDebug
+   ovrHmd_GetLastError
+   ovrHmd_AttachToWindow
+   ovrHmd_GetEnabledCaps
+   ovrHmd_SetEnabledCaps
+   ovrHmd_ConfigureTracking
+   ovrHmd_RecenterPose
+   ovrHmd_GetTrackingState
+   ovrHmd_GetFovTextureSize
+   ovrHmd_ConfigureRendering
+   ovrHmd_BeginFrame
+   ovrHmd_EndFrame
+   ovrHmd_GetEyePose
+   ovrHmd_GetRenderDesc
+   ovrHmd_CreateDistortionMesh
+   ovrHmd_DestroyDistortionMesh
+   ovrHmd_GetRenderScaleAndOffset
+   ovrHmd_GetFrameTiming
+   ovrHmd_BeginFrameTiming
+   ovrHmd_EndFrameTiming
+   ovrHmd_ResetFrameTiming
+   ovrHmd_GetEyeTimewarpMatrices
+   ovrMatrix4f_Projection
+   ovrMatrix4f_OrthoSubProjection
+   ovr_GetTimeInSeconds
+   ovr_WaitTillTime
+   ovrHmd_ProcessLatencyTest
+   ovrHmd_GetLatencyTestResult
+   ovrHmd_GetHSWDisplayState
+   ovrHmd_DismissHSWDisplay
+   ovrHmd_GetBool
+   ovrHmd_SetBool
+   ovrHmd_GetInt
+   ovrHmd_SetInt
+   ovrHmd_GetFloat
+   ovrHmd_SetFloat
+   ovrHmd_GetFloatArray
+   ovrHmd_SetFloatArray
+   ovrHmd_GetString
+   ovrHmd_SetString
+
+   ovrHmd_GetLatencyTest2DrawColor
+
+   ovrHmd_RegisterPostDistortionCallback
+   ovrHmd_AddDistortionTimeMeasurement   
+   ovrHmd_GetLatencyTestDrawColor
